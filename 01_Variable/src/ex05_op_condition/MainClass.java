@@ -13,13 +13,6 @@ public class MainClass {
 		boolean result4 = a <= b;
 		boolean result5 = a == b;
 		boolean result6 = a != b;
-		
-		System.out.println(result1);
-		System.out.println(result2);
-		System.out.println(result3);
-		System.out.println(result4);
-		System.out.println(result5);
-		System.out.println(result6);
 	}
 	
 	public static void ex02() {
@@ -33,10 +26,8 @@ public class MainClass {
 		int b = 10;
 		
 		boolean result1 = (a == 10) && (b == 10);
-		boolean result2 = (a == 10) && (b == 20);
+		boolean result2 = (a == 10) && (b == 20) ;
 		
-		System.out.println(result1);
-		System.out.println(result2);
 		
 		boolean result3 = (a == 10) || (b == 10);
 		boolean result4 = (a == 10) || (b == 20);
@@ -122,11 +113,6 @@ public class MainClass {
 		System.out.println(result);
 		
 	}
-	
-	public static void ex08() {
-		
-	}
-	
 	
 	public static void main(String[] args) {
 		ex07();
