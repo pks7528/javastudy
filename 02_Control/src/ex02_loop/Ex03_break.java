@@ -39,7 +39,7 @@ public class Ex03_break {
 		// 모금
 		
 		int goal = 100000; // 모금 목표
-		int money = 60; // 1회 모금 금약
+		int money = 60; // 1회 모금 금액
 		int total = 0; // 누적 모금액
 		int n = 0; // 모금 횟수
 		

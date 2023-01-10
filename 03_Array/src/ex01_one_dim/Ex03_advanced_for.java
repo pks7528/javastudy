@@ -25,6 +25,7 @@ public class Ex03_advanced_for {
 		int max = 0;
 		int min = 100;
 		for(int n : scores) {
+			System.out.println(scores[1]);
 			total += n;
 			if(max<n) {
 				max = n;
@@ -49,7 +50,7 @@ public class Ex03_advanced_for {
 	
 	
 	public static void main(String[] args) {
-		ex02();
+		ex01();
 	}
 
 }
