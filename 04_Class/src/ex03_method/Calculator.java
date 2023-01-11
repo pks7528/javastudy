@@ -50,11 +50,6 @@ public class Calculator {
 	 */
 	
 	
-	
-	
-	
-	
-	
 	// addition 메소드 정의	
 	double addition(double a, double b) { //add 메소드로 매개변수 2개가 전달되면 두개 값을 더해서 리턴
 		

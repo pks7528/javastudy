@@ -24,11 +24,13 @@ public class Test {
 		
 		//1.
 		int serial=0;
+		String str = "";
 		if(serial % 2 == 1) {
-			System.out.println("남자입니다.");
+			str = "남자입니다.";
 		} else {
-			System.out.println("여자입니다.");
+			str = "여자입니다.";
 		}
+		System.out.println(str);
 		
 		//3.
 		for(int i=2; i<=5; i++) {
@@ -71,6 +73,7 @@ public class Test {
 		for(int i=1; i<= 100; i++) {
 			if( i%2 == 1 ) {
 				oddSum += i;
+				
 			}
 		}
 		System.out.println("홀수의 합은 " + oddSum + "입니다.");
