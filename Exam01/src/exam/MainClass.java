@@ -161,12 +161,39 @@ public class MainClass {
 		boolean condition1 = false;  // 일의 자리가 3의 배수인가?
 		boolean condition2 = false;  // 십의 자리가 3의 배수인가?
 		
-		for(int i=1; i<=100; i++) {
-			System.out.print(i + "\t");
-			if( i%10 == 0 ) {
-				System.out.println();
-				
+//		for(int i=1; i<=100; i++) {
+//			System.out.print(i + "\t");
+//			if( i%10 == 0 ) {
+//				System.out.println();
+//			}
+//		}
+		
+		for(int n = 1; n <= 100; n++) {
+			int a = n % 10;
+			int b = n / 10;
+			
+			if(n < 10){
+				if( n % 3 == 0 ) {
+					System.out.print("짝" + "\t");
+				} else {
+					System.out.print(n + "\t");
+				}
+			} else if ( n % 10 == 0) {
+				if((a % 3 == 0) && (b % 3 == 0)) {
+					System.out.println("짝" + "\t");
+				} else { 
+					System.out.println(n + "\t");
+				}
+			} else {
+				if((a % 3 == 0) && ( b % 3 == 0)) {
+					System.out.print("짝짝" + "\t");
+				} else if((a % 3 == 0) || (b % 3 == 0)) {
+					System.out.print("짝" + "\t");
+				} else {
+					System.out.print(n + "\t");
+				}
 			}
+			
 		}
 	}
 	
