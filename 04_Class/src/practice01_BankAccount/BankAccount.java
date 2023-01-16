@@ -1,4 +1,4 @@
-package practice;
+package practice01_BankAccount;
 
 public class BankAccount {
 
@@ -16,34 +16,34 @@ public class BankAccount {
 	
 	//입금(마이너스 입금 불가 처리)
 	public void deposit(long money) {
-		if(money <= 0) {
-			return; // 메소드 종료. 오직 반환이 void인 경우에만 사용 가능.
-		}
-		balance += money;
-	}	
-//		if(money>0) {
-//			balance += money;
-//			System.out.println("잔액 : " + balance + "원");
-//		} else {
-//			System.out.println("입금 불가");
+//		if(money <= 0) {
+//			return; // 메소드 종료. 오직 반환이 void인 경우에만 사용 가능.
 //		}
+//		balance += money;
 	
+		if(money>0) {
+			balance += money;
+			System.out.println("잔액 : " + balance + "원");
+		} else {
+			System.out.println("입금 불가");
+		}
+	}	
 	
 	//출금(마이너스 출금 + 잔액보다 큰 출금 불가 처리)
 	public long withdrawal(long money) {
-		if(money <= 0 || money > balance) {
-			return 0;
-		}
-		balance -= money;
-		return money;
-		
-//		if(balance-money>=0) {
-//			balance -= money;
-//			System.out.println("잔액 : " + balance + "원");
-//		} else {
-//			System.out.println("출금 불가");
+//		if(money <= 0 || money > balance) {
+//			return 0;
 //		}
-//		return balance;
+//		balance -= money;
+//		return money;
+//		
+		if(balance-money>=0) {
+			balance -= money;
+			System.out.println("잔액 : " + balance + "원");
+		} else {
+			System.out.println("출금 불가");
+		}
+		return balance;
 	}
 	
 	//이체(

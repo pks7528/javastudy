@@ -14,8 +14,25 @@ public class MainClass {
 		} else {
 			System.out.println("여자입니다.");
 		}
-	}
 	
+	
+	// 풀이
+//		int number = 1234567;
+//		if( number / 1000000 == 1) {
+//			System.out.println("남자입니다.");
+//		} else {
+//			System.out.println("여자입니다.");
+//		}
+	
+//		int number = 1234567;
+//		String strNumber = number + "";
+//		if(strNumber.charAt(0) % 2 == 1) {
+//			System.out.println("남자입니다.");
+//		} else {
+//			System.out.println("여자입니다.");
+//		}
+	}	
+		
 	// 문제2. int a와 int b에 저장된 결과를 이용해서 사칙연산 결과를 출력하시오.
 	// 예시
 	// 7 + 2 = 9
@@ -48,6 +65,28 @@ public class MainClass {
 				System.out.println( i + " x " + j + " = " + i*j );
 			}
 		}
+		
+//		풀이
+//		for( int i=2; i<=5; i++ ){
+//			for( int j=1; j<=9; j++ ){
+//				System.out.println( i + " x " + j + " = " + i*j );
+//				if( i == 5 && j == 5 ) {
+//					break;
+//				}
+//			}
+//		}
+		
+//		outer :	// 바깥 for문 laber
+//		for( int i=2; i<=5; i++ ){
+//			inner: // 안쪽 for문 label
+//			for( int j=1; j<=9; j++ ){
+//				System.out.println( i + " x " + j + " = " + i*j );
+//					if( i == 5 && j == 5 ) {
+//					break outer; // 바깥 for문 끝내기
+//				}
+//			}
+//		}
+		
 	}
 	
 	// 문제4. begin부터 end 사이의 모든 정수들의 평균을 출력하시오.
@@ -68,6 +107,14 @@ public class MainClass {
 		average = (double)total / count;
 		System.out.println(begin + "부터 " + end + "사이 모든 정수의 평균은 " + average + "입니다.");
 		
+//		풀이
+//		int begin = 1;
+//		int end = 6;
+//		int total = 0;
+//		for(int n=begin; n<=end; n++) {
+//			total += n;
+//		}
+//		System.out.println(begin + "부터 " + end + "사이 모든 정수의 평균은 " + total / (end - begin + 1.0) + "입니다.");
 	}
 	
 	// 문제5. 1부터 100 사이의 모든 짝수와 홀수를 각각 더한 결과를 모두 출력하시오.
@@ -81,7 +128,7 @@ public class MainClass {
 		for(int i=1; i<=100; i++) {
 			if( i % 2 == 0 ) {
 				evenTotal += i;
-			}
+			} 
 		}
 		System.out.println("짝수 합은 " + evenTotal + "입니다.");
 		
@@ -91,7 +138,19 @@ public class MainClass {
 			}
 		}
 		System.out.println("홀수 합은 " + oddTotal + "입니다.");
+//		풀이
+//		for(int i=1; i<=100; i++) {
+//			if( i % 2 == 0 ) {
+//				evenTotal += i;
+//			} else {
+//				oddTotal += i;
+//			}
+//			System.out.println("짝수 합은 " + evenTotal + "입니다.");
+//			System.out.println("홀수 합은 " + oddTotal + "입니다.");
+//		}	
 	}
+	
+
 	
 	// 문제6. 배열에 저장된 모든 정수를 모두 더하시오.
 	// 단, 0보다 작은 값은 더하지 마시오.
@@ -107,6 +166,16 @@ public class MainClass {
 			}
 		}
 		System.out.println("합계는 " + total + "입니다.");
+		
+//		풀이 예시1
+//		for(int i=0; i<arr.length; i++) {
+//			if(arr[i] < 0) {
+//				continue;
+//			}
+//			total += arr[i];
+//		}
+//		System.out.println("합계는 " + total + "입니다.");
+//		
 	}
 	
 	// 문제7. 제시된 배열에 변수 ch에 저장된 문자가 몇 개 포함되어 있는지 갯수를 구해서 출력하시오.
@@ -123,6 +192,8 @@ public class MainClass {
 			}
 		}
 		System.out.println("배열에 포함된 " + ch + "는 " + count + "개입니다.");
+	
+	
 	}
 	
 	// 문제8. 점수에 따라 가져갈 수 있는 모든 사은품을 출력하시오.
@@ -146,6 +217,37 @@ public class MainClass {
 		break;
 		case 6: System.out.println("행주");
 		}
+		
+//		//예시 1
+//		String strScore = "75";
+//		int score = Integer.parseInt(strScore);
+//		
+//		String result = "";
+//		switch(score/10) {
+//		case 10: 
+//		case 9: result += "냄비";
+//		case 8: result += "식칼";
+//		case 7: result += "도마";
+//		case 6: result += "행주";
+//		}
+//		System.out.println(result);
+		//예시 2
+//		String strScore = "75";
+//		int score = Integer.parseInt(strScore);
+//		String result = "";
+//		if(score >= 60) {
+//			result += "행주";
+//		}
+//		if(score >= 70) {
+//			result += "도마";
+//		}
+//		if(score >= 80) {
+//			result += "식칼";
+//		}
+//		if(score >= 90) {
+//			result += "냄비";
+//		}
+//		System.out.println(result);
 	}
 	
 	// 문제9. 1 ~ 100 사이의 정수를 대상으로 369 게임 결과를 아래와 같이 출력하시오.
@@ -193,8 +295,24 @@ public class MainClass {
 					System.out.print(n + "\t");
 				}
 			}
-			
 		}
+//		예시
+		for(int n=1; n<=100; n++) {
+			int one = n % 10;
+			condition1 = ( one % 3 == 0 && one != 0 );
+			int ten = n / 10; 
+			condition2 = ( ten % 3 == 0 && ten != 0 );
+			if(condition1 && condition2) {
+				System.out.print("짝짝" + "\t");
+			} else if(condition1 || condition2) {
+				System.out.print("짝" + "\t");
+			} else {
+				System.out.print(n + "\t");
+			}
+			if(n%10 == 0)
+				System.out.println();
+		}
+		
 	}
 	
 	// 문제10. 5명의 이름과 점수를 각각의 배열에 저장하였다.
@@ -215,6 +333,18 @@ public class MainClass {
 			}
 		}
 		System.out.println("가장 높은 점수를 받은 사람은 " + names[num]  + "입니다.");
+		
+//		예시
+//		int max = scores[0];
+//		int maxNo = 0;
+//		for(int i=1; i<scores.length; i++) {
+//			if( max < scores[i] ) {
+//				max = scores[i];
+//				maxNo = i;
+//			}
+//		}
+//		System.out.println("가장 높은 점수를 받은 사람은 " + names[maxNo]  + "입니다.");
+		
 	}
 	
 	// main 메소드는 그대로 사용합니다.
