@@ -1,5 +1,6 @@
 package ex01_try_catch;
 
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class MainClass {
@@ -59,7 +60,17 @@ public class MainClass {
 		}
 	}
 		
+	public static void ex04() {
+		
+		try {
+			FileReader fr = new FileReader("sample.txt");	//예외 상황 - 못읽었을때 어떻게 할 것이냐
+			fr.close();
+		} catch(Exception e) {
+			System.out.println("예외가 발생하였다.");
+		}
+	}
+	
 	public static void main(String[] args) {
-		ex03();
+		ex04();
 	}
 }

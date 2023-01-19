@@ -12,10 +12,6 @@ public class Ex01_String {
 		// 동일한 리터럴("hello")를 2번 이상 사용하면 
 		// 기존에 사용한 리터럴을 재사용한다.("hello"라는 리터럴이 2개 이상 만들어 지지 않는다.)
 		
-		/*
-		 	 
-		 */
-		
 		// 참조값이 같다는 의미이다. 저장된 문자열이 같다는 의미가 아니다.
 		System.out.println(str1 == str2);
 	}
@@ -59,7 +55,7 @@ public class Ex01_String {
 		// length 메소드
 		// 문자열의 길이(글자수)를 반환
 		
-		String str = "Helo\nWorld";
+		String str = "Hello\nWorld";
 		int length = str.length();						// 배열의 길이는 ()가 없다. arr.length = 필드,,,, str.length() = 메소드
 		System.out.println(length);
 	}
