@@ -8,10 +8,15 @@ import lombok.ToString;
 @ToString
 @Setter
 @Getter
-@AllArgsConstructor
+@AllArgsConstructor			// new Car("", "")
 public class Car {
-
+	
+	//필드
 	private String carNo;
 	private String model;
 	
+	//생성자
+	
+	
+	//메소드
 }
