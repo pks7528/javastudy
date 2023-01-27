@@ -134,17 +134,10 @@ public class MainClass {
 	
 	public static void ex05() {
 		
-		
-		File dir = new File("C:" + File.separator + "storage");
-		if(dir.exists() == false) {
-			dir.mkdirs();
-		}
-		
-		File file = new File(dir, "ex06.txt");
-		
-		try(PrintWriter out = new PrintWriter(file)){
+		try {
 			
 			Scanner sc = new Scanner(System.in);
+			
 			System.out.print("첫 번째 정수를 입력하세요 >>>");
 			int number1 = sc.nextInt();
 			
