@@ -1,16 +1,34 @@
 package practice;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+
+import org.json.JSONArray;
 
 public class MainClass {
 	
@@ -131,7 +149,6 @@ public class MainClass {
 	// 문제5. 예외가 발생한 경우 예외 메시지와 예외 발생시간을 저장한 C:\storage\log.txt. 파일을 생성하시오.
 	// 예시)
 	// 2023-01-26 12:08:30 / by zero
-	
 	public static void ex05() {
 		
 		try {
@@ -192,8 +209,147 @@ public class MainClass {
 		
 	}
 	
+	// 문제4 실행후 6 작업
+	// 문제6. C:\storage\diary.txt 파일을 C:\storate2\diary.txt 파일로 이동하시오.(복사 후 원본 제거) 제거는 file클래스, 복사는 reader 클래스 참고
+	public static void ex06() {
+        
+		File from = new File("C:" + File.separator + "storage", "diary.txt");
+		
+		File toDir = new File("C:" + File.separator + "storage2");
+		if(toDir.exists() == false) {
+			toDir.mkdirs();
+		}
+		File to = new File(toDir, from.getName());
+		
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+		
+		try {
+			br = new BufferedReader(new FileReader(from));
+			bw = new BufferedWriter(new FileWriter(to));
+			
+			String line = null;
+			while((line = br.readLine()) != null) {
+				bw.write(line);
+				bw.newLine();
+			}
+			
+			bw.close();
+			br.close();
+			
+			if(from.length() == to.length()) {
+				from.deleteOnExit();
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+//		File file = new File("C:" + File.separator + "storage", "diary.txt");
+//		BufferedReader br = null;
+//		
+//		try {
+//			br = new BufferedReader(new FileReader(file));
+//			
+//			String line = null;
+//			StringBuilder sb = new StringBuilder();
+//			while((line = br.readLine()) != null) {
+//				sb.append(line);
+//			}
+//			System.out.println(sb.toString());
+//			
+//			File dir = new File("C:" + file.separator + "storage2");
+////			if(dir.exists() == false) {
+////				dir.mkdirs();
+////			}
+//			File file2 = new File(dir, "diary.txt");
+//			if(file.exists() == false) {
+//				file.createNewFile();
+//			}
+//			
+//			file2 = file;
+//			
+//		} catch(IOException e) {
+//			e.printStackTrace();
+//		} finally {
+//			try {
+//				if(br != null) {
+//					br.close();
+//				}
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
+	}
+	
+	
+	// 문제7. System.in은 키보드로부터 바이트 데이터를 입력 받는 InputStream이다. 
+	//		  System.in으로부터 문장 1개를 입력받아서 출력하시오.
+	//		  Scanner 대신 BufferedReader를 사용하시오.
+	
+	public static void ex07() {
+		// 입력은 바이트스트림,,을 문자스트림으로 바꿀것
+		
+		BufferedReader br = null;
+		
+		try {
+			br = new BufferedReader(new InputStreamReader(System.in)); // 키보드로 들어오는 데이터가 문자로 바뀌고 속도 향상
+			
+			System.out.print("문장 입력 >>> ");
+			String sentence = br.readLine();	// 엔터누르면 입력 끝
+			System.out.println("입력된 문장 : " + sentence);
+			
+		} catch(IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(br != null) {
+					br.close();
+				}
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+	}
+
+
+	// 문제8. C:\GDJ61\installer\eclipse-jee-2021-03-R-win32-x86_64.zip 파일을 
+	//		  C:\storage\eclipse.zip으로 복사하시오
+	public static void ex08() {				// 실서비스에서 사용할 수 있으므로.....공부
+		
+		File from = new File("C:" + File.separator + "GDJ61" + File.separator + "installer", "eclipse-jee-2021-03-R-win32-x86_64.zip");
+		File to = new File("C:" + File.separator + "storage", "eclipse.zip");
+
+		BufferedInputStream bin = null;
+		BufferedOutputStream bout = null;
+		
+		try {
+			bin = new BufferedInputStream(new FileInputStream(from));
+			bout = new BufferedOutputStream(new FileOutputStream(to));
+			
+			byte[] b = new byte[1024];	// 1킬로 바이트
+			int readByte = 0;
+			while((readByte = bin.read(b)) != -1) {
+				bout.write(b, 0, readByte);	// 배열 b의 인덱스 0부터 readByte개 데이터를 사용한다.
+			}
+			System.out.println("복사완료");
+		} catch(IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if( bout != null) {bout.close();}
+				if( bin != null) {bin.close();}
+			} catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+	} 
+	
 	public static void main(String[] args) {
-		ex05();
+		ex08();
 	}
 	
 	
