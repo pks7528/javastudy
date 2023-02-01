@@ -278,8 +278,8 @@ public class Ex01_String {
 	public static void ex01() {
 		
 		String url = "https://comic.naver.com/webtoon/detail?titleId=758037&no=112&weekday=mon";
-		String requestURI = url.substring(0, url.indexOf("?"));  // https://comic.naver.com/webtoon/detail?
-		System.out.println(requestURI);
+		String requestUrl = url.substring(0, url.indexOf("?"));  // https://comic.naver.com/webtoon/detail?
+		System.out.println(requestUrl);
 		
 		String params = url.substring(url.indexOf("?") + 1);
 		System.out.println(params);
@@ -314,22 +314,22 @@ public class Ex01_String {
 	}
 	
 	public static void main(String[] args) {
-		literal();
-		stringObject();
-		equals();
-		length();
-		charAt();
-		substring();
-		indexOf();
-		lastIndexOf();
-		startsWith();
-		contains();
-		toCase();
-		trim();
-		replace();
-		isEmpty();
-		format();
-		ex01();
+//		literal();
+//		stringObject();
+//		equals();
+//		length();
+//		charAt();
+//		substring();
+//		indexOf();
+//		lastIndexOf();
+//		startsWith();
+//		contains();
+//		toCase();
+//		trim();
+//		replace();
+//		isEmpty();
+//		format();
+//		ex01();
 		ex02();
 	}
 }
