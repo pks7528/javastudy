@@ -49,17 +49,57 @@ public class MainClass {
 	}		
 	
 	// 문제7. 구구단을 외자.
-	// 2~9단 사이의 임의의 구구단이 출력되면 정답을 입력한다.
-	// 정답을 입력해서 맞으면 "정답", 틀리면 "땡"을 출력하시오.
-	// 예시1)
-	// 4x9? >>> 36
-	// 정답
-	// 예시2)
-	// 8x7? >>> 49
-	// 땡
-	public static void ex07() {
-		
-	}
+	   // 2~9단 사이의 임의의 구구단이 출력되면 정답을 입력한다.
+	   // 정답을 입력해서 맞으면 "정답", 틀리면 "땡"을 출력하시오.
+	   // 예시1)
+	   // 4x9? >>> 36
+	   // 정답
+	   // 예시2)
+	   // 8x7? >>> 49
+	   // 땡
+	   public static void ex07() {
+
+	      /*
+	         기본 값이 double이기 때문에 int로 변환해 주는 작업이 필요하다.
+	         난수 생성하기
+	         
+	       * 
+	      //int dan
+	         Math.random()                    0.0 <= n < 1.0
+	         Math.random() * 3             0.0 <= n < 3.0
+	         (int)(Math.random() * 3)       0 <= n < 3
+	         (int)(Math.random() * 8) + 2    2 <= n < 10
+	         ----------------------------------------------------
+	         (int)(Math.random() * 개수 ) + 시작값
+	         
+	       * 
+	      //int n
+	         Math.random()                    0.0 <= n < 1.0
+	         Math.random() * 3             0.0 <= n < 3.0
+	         (int)(Math.random() * 9)       0 <= n < 9
+	         (int)(Math.random() * 9) + 1    1 <= n < 10
+	         ----------------------------------------------------
+	         (int)(Math.random() * 개수 ) + 시작값
+	         
+	       */
+	      
+	      // Scanner 객체 생성
+	      Scanner sc = new Scanner(System.in);
+	      
+	      // 위쪽 표를 보고 dan ,과 n의 난수를 생성
+	      int dan = (int)(Math.random()*8) + 2;
+	      int n = (int)(Math.random()*9) + 1;
+	      
+	      // int 입력
+	      System.out.println(dan + "x" + n +" ? = >>> ");
+	      int answer = sc.nextInt();
+	      
+	      // 삼항 연산
+	      // dan * n과 answer의 값이 같으면 정답 , 아니면 땡
+	      System.out.println(dan * n == answer ? "정답" : "땡");
+	      
+	      // Scanner 객체 종료
+	      sc.close();
 	
 	// 문제8. 임의의 주민등록번호(personalId)를 분석하여 나이와 성별을 출력하시오.
 	// 나이 : 현재년도 - 태어난년도 + 1
