@@ -108,6 +108,7 @@ public class JSONMainClass {
 			}
 			reader.close();
 			con.disconnect();
+			//System.out.println(sb.toString());
 			
 			JSONArray items = new JSONObject(sb.toString())
 											.getJSONObject("response")
