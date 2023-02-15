@@ -93,7 +93,7 @@ public class MainClass {
 			System.out.println("컨텐트 타입 : " + contentType);
 			
 			// 요청 헤더
-			String userAgent = con.getRequestProperty("User-Agent");			// property - 속성,, 헤더의 키 값이 뭐냐
+			String userAgent = con.getRequestProperty("User-Agent"); // property - 속성,, 헤더의 키 값이 뭐냐
 			System.out.println("User-Agent : " + userAgent);
 			
 			String referer = con.getRequestProperty("Referer");
@@ -118,7 +118,7 @@ public class MainClass {
 		
 		BufferedInputStream in = null;		// Daum 로그를 읽어 들이는 입력 스트림
 		BufferedOutputStream out = null;	// C:\storage\daum.png로 내보내는 출력 스트림
-		File file = new File("C:" + File.separator + "storage" + File.separator, "daum.png");
+		File file = new File("C:" + File.separator + "storage", "daum.png");
 		try {
 			
 			url = new URL(apiURL);
@@ -318,6 +318,6 @@ public class MainClass {
 }
 		
 	public static void main(String[] args) {
-		ex06();
+		ex02();
 	}
 }

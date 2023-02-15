@@ -61,7 +61,7 @@ public class MainClass {
 		Set<Integer> set2 = new HashSet<Integer>(Arrays.asList(3, 4, 5, 6, 7));
 		
 		// 합집합
-		set1.addAll(set2);	// set1에 교집합 결과가 저장된다. 
+		set1.addAll(set2);	// set1에 합집합 결과가 저장된다. 
 		System.out.println(set1);
 		System.out.println(set2);
 	}
@@ -72,7 +72,7 @@ public class MainClass {
 		Set<Integer> set2 = new HashSet<Integer>(Arrays.asList(3, 4, 5, 6, 7));
 		
 		// 차집합
-		set1.removeAll(set2);	// set1에 교집합 결과가 저장된다. 
+		set1.removeAll(set2);	// set1에 차집합 결과가 저장된다. 
 		System.out.println(set1);
 		System.out.println(set2);
 	}
@@ -90,6 +90,11 @@ public class MainClass {
 	
 	
 	public static void main(String[] args) {
+		ex01();
+		ex02();
+		ex03();
+		ex04();
+		ex05();
 		ex06();
 	}
 }
