@@ -74,10 +74,6 @@ public class Ex03_else_if {
 		}
 		
 		
-		
-		
-		
-		
 //		if(3<=month && month<6) {
 //			System.out.println("봄");
 //		} else if(6<=month && month<9) {
