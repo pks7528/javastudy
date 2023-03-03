@@ -68,7 +68,6 @@ public class MainClass {
 	
 		int b = 10;
 		System.out.println(b++);
-		
 	}
 	
 //	ex05 메소드 정의
@@ -80,8 +79,6 @@ public class MainClass {
 		int a;
 		a = 10;
 		System.out.println(a);
-		
-		
 	}
 
 //	ex06 메소드 정의(연습)
@@ -108,7 +105,6 @@ public class MainClass {
 		
 		account -= 50000;
 		System.out.println(account);
-		
 	}
 
 //	ex08 메소드 정의(연습)
@@ -126,7 +122,7 @@ public class MainClass {
 	}
 	
 	public static void main(String[] args) {
-		ex08(); //ex08 메소드 호출
+		ex04(); //ex08 메소드 호출
 		
 	}
 

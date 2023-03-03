@@ -8,8 +8,6 @@ public class Ex02_reference {
 		arr = new int[5];
 		
 		System.out.println(arr); // 5개 배열 요소의 참조(주소, 번지)값
-		
-		
 	}
 	
 	public static void ex02() {
@@ -48,8 +46,6 @@ public class Ex02_reference {
 		}
 		
 	}
-	
-	
 	
 	public static void main(String[] args) {
 

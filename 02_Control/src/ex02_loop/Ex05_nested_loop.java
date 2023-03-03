@@ -72,9 +72,6 @@ public class Ex05_nested_loop {
 			}
 			System.out.println();
 		}
-		
-		
-		
 	}
 	
 	public static void main(String[] args) {

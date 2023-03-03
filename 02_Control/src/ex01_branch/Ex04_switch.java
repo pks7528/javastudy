@@ -8,8 +8,7 @@ public class Ex04_switch {
 		...
 		default: 실행문
 		}
-		
-		
+				
 		표현식의 결과로 주로 사용하는 타입
 		- int
 		- String
@@ -18,7 +17,6 @@ public class Ex04_switch {
 		- boolean 
 		- double
 		- long
-		
 	 */
 	
 		public static void ex01() {
@@ -120,7 +118,7 @@ public class Ex04_switch {
 		
 	public static void main(String[] args) {
 		
-		ex04();
+		ex02();
 		
 	}
 

@@ -77,7 +77,7 @@ public class Ex01_for {
 	}
 
 	public static void main(String[] args) {
-		ex04();
+		ex03();
 		
 	}
 

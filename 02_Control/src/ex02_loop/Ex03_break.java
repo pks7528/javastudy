@@ -6,7 +6,6 @@ public class Ex03_break {
 	 	break문
 	 	1. switch문 종료
 	 	2. 반복문(for, while) 종료
-	 	
 	 */
 	
 	public static void ex01() {

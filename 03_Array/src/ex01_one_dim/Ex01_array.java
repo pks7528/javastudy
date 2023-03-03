@@ -61,7 +61,7 @@ public class Ex01_array {
 		// 배열 길이
 		int length = 5;
 		
-		// 배열 선언 + 셍성
+		// 배열 선언 + 생성
 		int[] arr = new int[length];
 		
 		//배열 순회
@@ -180,7 +180,7 @@ public class Ex01_array {
 	}
 	
 	public static void main(String[] args) {
-		ex07();
+		ex02();
 	}
 
 }
